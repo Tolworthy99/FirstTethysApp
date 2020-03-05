@@ -1,0 +1,181 @@
+body{
+  background: #1a1a1d;
+}
+
+h1, h2{
+  color: #c3073f;
+  text-align: center;
+}
+
+.links{
+  text-align: center;
+  color: #950740;
+}
+
+.link:visited{
+  color: #950740;
+}
+
+.Intro p{
+  background-color: #4e4e50;
+  padding: 5px;
+}
+/* Slideshow container */
+.top3slideshow {
+  position: relative;
+  background: #4e4e50;
+}
+
+/* Slides */
+.slides {
+  display: none;
+  padding: 80px;
+  text-align: left;
+}
+
+.slide-content{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+	justify-content: space-evenly;
+}
+.col {
+  flex: 30%;
+  max-width: 20%;
+  padding: 0 10px;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.col figcaption{
+	width: 100%;
+	vertical-align: middle;
+	margin-bottom: 10px;
+	border: solid 2px #950740;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+}
+
+.col img {
+  margin-top: 10px;
+  vertical-align: middle;
+  width: 100%;
+	border: solid 3px;
+}
+
+
+.slides h1 {
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/*SOME FAV*/
+table, td {
+  border: 2px solid #950740;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4e4e50;
+  border-collapse: collapse;
+}
+
+
+
+
+/*PHOTO SECTION*/
+/*Grid Thumbnails*/
+/*The grid Four Equal columns that floats next to each other*/
+.photos {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+	justify-content: space-evenly;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 20%;
+  max-width: 15%;
+  padding: 0 10px;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.column figcaption{
+	width: 100%;
+	vertical-align: middle;
+	margin-bottom: 10px;
+	border: solid 1px #950740;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+  background-color: #4e4e50;
+
+}
+
+.column img {
+  margin-top: 10px;
+  vertical-align: middle;
+  width: 100%;
+	border: solid 1px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
