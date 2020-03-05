@@ -9,6 +9,73 @@
   </div>
 {% endblock %}
 
+{% block app_content %}
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+   <style>
+       #mapid { height: 500px; }
+  </style>
+   <div class=title>
+     <h1>Maps using Leaflet</h1>
+     <h6>Joseph Tolworthy | CEEN 514 | 18th Feb 2020</h6>
+   <div>
+   <h4 class="header">Map of my home town Billingham, England</h4>
+   <div id="mapid"></div>
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+   <script>
+     var mymap = L.map('mapid').setView([54.614940, -1.282996], 13);
+
+     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+         maxZoom: 18,
+         id: 'mapbox/streets-v11',
+         accessToken: 'pk.eyJ1IjoidG9sd29ydGh5MSIsImEiOiJjazZsYmV5a2gwZDlzM2xueTRiOHNscGoxIn0.aJB5chRIixiPuc-kkmaP7g'
+     }).addTo(mymap);
+
+     var markerimg = '<img src=Images/IMG_0689.jpeg height="100px">'
+     var customPopupHome = "<b>Old Home</b><br>" + markerimg + "<p>This was my home for most of my time in Billingham.</p>";
+     var customPopupCollege = "<b>Bede Sixth Form College (Community College)</b><br><ul><li>Graduated 2010</li><li>3 A-Levels</li><ul><li>Chemistry</li><li>Geology</li><li>Math</li></ul></ul>";
+     var customPopupSchool = "<b>St Michaels RC Secondary School (Secondary School)</b><br><ul><li>Graduated 2008</li><li>13 G.S.C.E's</li></ul>"
+     var customPopupChurch = "<b>Church of Jesus Christ of Latter-day Saints</b><br><p>It is the stake center and had the family history center</p>"
+
+      // specify popup options
+      var customOptions =
+          {
+          'maxWidth': '500',
+          'className' : 'custom'
+          }
+     var marker = L.marker([54.624918, -1.279280]).addTo(mymap);
+     marker.bindPopup(customPopupHome, customOptions);
+
+     var marker = L.marker([54.617078, -1.282447]).addTo(mymap);
+     marker.bindPopup(customPopupCollege, customOptions);
+
+     var marker = L.marker([54.614176, -1.271438]).addTo(mymap);
+     marker.bindPopup(customPopupSchool, customOptions);
+
+     var marker = L.marker([54.607679, -1.281147]).addTo(mymap);
+     marker.bindPopup(customPopupChurch, customOptions);
+
+     var polygon = L.polygon([
+         [54.625060, -1.279191],
+         [54.624790, -1.279223],
+         [54.624785, -1.279333],
+         [54.625069, -1.279312]
+     ],{color: "red",}).addTo(mymap);
+
+     var circle = L.circle([54.624918, -1.279280], {
+         color: 'blue',
+         fillColor: 'blue',
+         fillOpacity: 0.5,
+         radius: 550
+     }).addTo(mymap);
+   </script>
+
+{% endblock %}
+
 {# Use the after_app_content block for modals #}
 {% block after_app_content %}
   <!-- Example Modal -->
