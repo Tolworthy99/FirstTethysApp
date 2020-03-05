@@ -11,12 +11,19 @@
 
 body{
   background: #1a1a1d;
+  color: white;
 }
 
 h1, h2{
   color: #c3073f;
   text-align: center;
 }
+
+p {
+  color:white;
+}
+
+
 
 .links{
   text-align: center;
