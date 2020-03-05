@@ -29,6 +29,11 @@ class DamInventory(TethysAppBase):
                 url='dam-inventory',
                 controller='dam_inventory.controllers.home'
             ),
+            UrlMap(
+                name = 'mappage',
+                url='dam-inventory/mappage',
+                controller='dam_inventory.controllers.mappage'
+            )
         )
 
         return url_maps

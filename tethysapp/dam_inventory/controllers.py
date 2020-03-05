@@ -72,3 +72,11 @@ def home(request):
     }
 
     return render(request, 'dam_inventory/home.html', context)
+
+@login_required()
+def mappage(request):
+    """
+    Controller for the Add Dam page
+    """
+    context={}
+    return render(request, 'dam_inventory/mappage.html', context)
