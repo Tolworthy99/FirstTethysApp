@@ -18,12 +18,14 @@
 {% url 'dam_inventory:mappage' as mappage_url %}
 {% url 'dam_inventory:form_page' as form_page_url%}
 {% url 'dam_inventory:list_dams' as list_dams_url%}
+{% url 'dam_inventory:dam_map' as dam_map_url%}
 
   <li class="title">App Navigation</li>
   <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{home_url}}">Home</a></li>
   <li class="{% if request.path == mappage_url %}active{% endif %}"><a href="{{mappage_url}}">Home town Map</a></li>
   <li class="{% if request.path == form_page_url %}active{% endif %}"><a href="{{form_page_url}}">Form Practice</a></li>
   <li class="{% if request.path == list_dams_url %}active{% endif %}"><a href="{{list_dams_url}}">Lists of Form Submissions</a></li>
+  <li class="{% if request.path == dam_map_url %}active{% endif %}"><a href="{{dam_map_url}}">Map of Dams</a></li>
 
 {% endblock %}
 
